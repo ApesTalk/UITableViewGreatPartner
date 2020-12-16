@@ -20,11 +20,6 @@ class ATTableViewPartner: NSObject {
     weak private var table: UITableView?
     var sectionSource: [ATTableViewSectionPartner] = [ATTableViewSectionPartner]()
     
-    override init() {
-        super.init()
-        self.addObserver(self, forKeyPath: "sectionSource", options: .new, context: &myContext)
-    }
-    
     //批量添加sectionParter
     func batchAddSections(_ array: [Any], _ generater: generateSectionParterCallBack) {
         for item in array {
