@@ -136,9 +136,8 @@ class ATTableViewPartner: NSObject {
     func didSelectRow(_ tableView: UITableView, _ indexPath: IndexPath) {
         let sp = self.sectionSource[indexPath.section]
         let rp = sp.rowSource[indexPath.row]
-        let cell: UITableViewCell? = self.getCell(tableView, indexPath)
-        if cell != nil && rp.selectAction != nil {
-            rp.selectAction!(cell, indexPath)
+        if rp.selectAction != nil {
+            rp.selectAction!(nil, indexPath)
         }
     }
 }
