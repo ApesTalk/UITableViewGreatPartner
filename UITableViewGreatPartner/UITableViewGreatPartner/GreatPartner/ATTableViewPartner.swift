@@ -14,8 +14,6 @@ import UIKit
 
 typealias generateSectionParterCallBack = (_ obj: Any) -> ATTableViewSectionPartner
 
-private var myContext = 0
-
 class ATTableViewPartner: NSObject {
     weak private var table: UITableView?
     var sectionSource: [ATTableViewSectionPartner] = [ATTableViewSectionPartner]()
