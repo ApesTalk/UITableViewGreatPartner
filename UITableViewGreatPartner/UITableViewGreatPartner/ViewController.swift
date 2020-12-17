@@ -44,7 +44,7 @@ class ViewController: UIViewController {
             }
         }
         
-        tablePartner.sectionSource[0].batchAddRows([0]) { (item) -> ATTableViewCellPartner in
+        tablePartner.batchAddRows(inSection: 0, [0]) { (item) -> ATTableViewCellPartner in
             return ATTableViewCellPartner.init(0, "UITableViewCell", { (cell, indexPath) in
                 cell?.textLabel?.textColor = .black
                 cell?.textLabel?.text = "第一个分区的第一个Cell"
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }
         
         let arr = self.networkRequest(0)
-        tablePartner.sectionSource[1].batchAddRows(arr) { (item) -> ATTableViewCellPartner in
+        tablePartner.batchAddRows(inSection: 1, arr) { (item) -> ATTableViewCellPartner in
             return ATTableViewCellPartner.init(0, "TestCell", { (cell, indexPath) in
                 guard let t = item as? String else {
                     return
@@ -64,12 +64,11 @@ class ViewController: UIViewController {
                 let rCell = cell as! TestCell
                 rCell.lbl.text = t
             }, { (cell, indexPath) in
-                print("第二个分区的第\(indexPath.row)cell被点击")
+                print("第\(indexPath.section)个分区的第\(indexPath.row)个cell被点击")
             }) { (cell, indexPath) -> CGFloat in
                 return TestCell.height()
             }
         }
-        
         
     }
 

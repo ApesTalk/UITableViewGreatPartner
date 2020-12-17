@@ -32,6 +32,22 @@
     }
 }
 
+- (void)batchAddRows:(NSArray *)datas inSection:(NSInteger)section generator:(GenerateCellParterBack)generator
+{
+    if(section >= 0 && section < self.sectionSource.count){
+        ATTableViewSectionPartner *sp = self.sectionSource[section];
+        [sp batchAddRows:datas generator:generator];
+    }
+}
+
+- (void)removeAllRowsInSection:(NSInteger)section
+{
+    if(section >= 0 && section < self.sectionSource.count){
+        ATTableViewSectionPartner *sp = self.sectionSource[section];
+        [sp.rowSource removeAllObjects];
+    }
+}
+
 - (void)bind:(UITableView *)table
 {
     self.table = table;

@@ -25,6 +25,22 @@ class ATTableViewPartner: NSObject {
         }
     }
     
+    //批量添加cellParter
+    func batchAddRows(inSection section: Int,  _ array: [Any], _ generater: generateCellParterCallBack) {
+        if section >= 0 && section < self.sectionSource.count {
+            let sp = self.sectionSource[section]
+            sp.batchAddRows(array, generater)
+        }
+    }
+    
+    //清空
+    func removeAllRows(inSection section: Int) {
+        if section >= 0 && section < self.sectionSource.count {
+            let sp = self.sectionSource[section]
+            sp.rowSource.removeAll()
+        }
+    }
+    
     
     func bind(_ tableView: UITableView) {
         self.table = tableView

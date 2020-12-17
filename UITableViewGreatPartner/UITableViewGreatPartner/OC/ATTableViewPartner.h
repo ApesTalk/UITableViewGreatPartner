@@ -17,6 +17,10 @@ typedef ATTableViewSectionPartner* (^GenerateSectionParterBack)(id obj);
 
 //批量导入section
 - (void)batchAddSections:(NSArray *)datas generator:(GenerateSectionParterBack)generator;
+//批量导入cell
+- (void)batchAddRows:(NSArray *)datas inSection:(NSInteger)section generator:(GenerateCellParterBack)generator;
+//清空
+- (void)removeAllRowsInSection:(NSInteger)section;
 
 //常规的列表，调用bind交权即可
 - (void)bind:(UITableView *)table;///< 把代理全权交给ATTableViewPartner
