@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef void(^CellConfigBlock)(UITableViewCell *cell, NSIndexPath *indexPath);
-typedef CGFloat(^CellHeightBlock)(UITableViewCell *cell, NSIndexPath *indexPath);
+typedef void(^CellConfigBlock)(id cell, NSIndexPath *indexPath);
+typedef CGFloat(^CellHeightBlock)(id cell, NSIndexPath *indexPath);
 typedef void(^CellSelectBlock)(NSIndexPath *indexPath);
 
 @interface ATTableViewCellPartner : NSObject

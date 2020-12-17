@@ -10,8 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "ATTableViewCellPartner.h"
 
-typedef void (^HFConfigBlock)(UITableViewHeaderFooterView *view, NSInteger section);
-typedef CGFloat (^HFHeightBlock)(UITableViewHeaderFooterView *view, NSInteger section);
+typedef void (^HFConfigBlock)(id view, NSInteger section);
+typedef CGFloat (^HFHeightBlock)(id view, NSInteger section);
 typedef ATTableViewCellPartner* (^GenerateCellParterBack)(id obj);
 
 @interface ATTableViewSectionPartner : NSObject
